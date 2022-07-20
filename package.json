@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ErickCarrasco/ts_multiple_file/issues"
   },
-  "homepage": "https://github.com/ErickCarrasco/ts_multiple_file#readme"
+  "homepage": "https://github.com/ErickCarrasco/ts_multiple_file#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
