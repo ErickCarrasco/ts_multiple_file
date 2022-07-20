@@ -1,23 +1,40 @@
 {
   "name": "ts_multiple_file",
   "version": "1.0.0",
-  "description": "",
+  "description": "Multiple TS File Package for future testing",
   "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier  --write \"src/**/*.{ts,js}\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ErickCarrasco/ts_multiple_file.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Hello World", "Math Multiplier Sample"],
+  "author": "Erick C",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ErickCarrasco/ts_multiple_file/issues"
   },
   "homepage": "https://github.com/ErickCarrasco/ts_multiple_file#readme",
   "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.7.4"
   }
 }
